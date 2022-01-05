@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QuemSou.Models.Mapeamento.Formacao>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr class="featurette-divider">
+<h2 class="featurette-heading"> Formações</h2>
+
+<div>
+
+    <p><a class="btn btn-lg btn-primary" @Html.ActionLink("Nova Formação", "Create") </a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculdade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SemestreAtual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevisaoTermino)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Faculdade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SemestreAtual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrevisaoTermino)
+
+            </td>
+            
+            <td>
+                <p> <a class="btn btn-lg btn-primary" @Html.ActionLink("Editar", "Edit", new { id = item.ID })</p>
+
+            </td>
+
+            <td>
+                <p> <a class="btn btn-lg btn-primary" onclick="return confirm('confirmar Eclusão ?');" @Html.ActionLink("Excluir", "Delete", new { id = item.ID })</p>
+            </td>
+
+            
+        </tr>
+    }
+
+</table>

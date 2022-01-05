@@ -1,0 +1,86 @@
+﻿@model IEnumerable<QuemSou.Models.Mapeamento.Experiencia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="~/Models/css/carousel.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+
+    <main role="main">
+
+        <hr class="featurette-divider">
+        <h2 class="featurette-heading"> Experiencias </h2>
+        <div>
+
+            <p><a class="btn btn-lg btn-primary" @Html.ActionLink("Nova Experiencia", "Create") </a>
+        </div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Admissao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Demissao)
+                </th>
+                <th>
+                    Função
+                </th>
+                <th>
+                    Descriçao da Função
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Admissao)
+                    </td>
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.Demissao)
+
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Funcao)
+                    </td>
+                    <td class="campo-medio">
+                        @Html.DisplayFor(modelItem => item.DescricaoFuncao)
+                    </td>
+                    
+                    <td>
+                       <p> <a class="btn btn-lg btn-primary" @Html.ActionLink("Editar", "Edit", new { id = item.ID })</p> 
+                    </td>
+
+                    <td>
+                        <p> <a class="btn btn-lg btn-primary" onclick="return confirm('confirmar Eclusão ?');" @Html.ActionLink("Excluir", "Delete", new { id = item.ID })</p>
+                    </td>
+                    
+                </tr>
+
+            }
+
+
+        </table>
+
+
+    </main>
+</body>
+</html>
+

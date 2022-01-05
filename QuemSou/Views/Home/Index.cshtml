@@ -1,0 +1,82 @@
+﻿@model QuemSou.Models.Mapeamento.Pessoas
+
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="~/Models/css/carousel.css" rel="stylesheet" />
+</head>
+<body>
+
+    <main role="main">
+
+        <hr class="featurette-divider">
+        
+       
+
+            <div class="container marketing">
+
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="rounded-circle" src="@Html.DisplayFor(model => model.Foto)" alt="Generic placeholder image" width="140" height="140">
+                        <h2>@Html.DisplayFor(model => model.Nome)</h2>
+                        <p></p>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Idade)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Idade) Anos
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Celular)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Celular)
+                        </dd>
+
+                        <dd>
+                            <br />
+                        </dd>
+                        <p>
+                            <a href="@Html.DisplayFor(model => model.linkedin)"><img src="~/Models/Imagens/Linkedin.png"></a>
+
+                        </p>
+                        <hr class="featurette-divider">
+
+                    </div>
+
+
+
+
+                    <div class="row featurette">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading">Resumo </h2>
+                            <h3 style="margin-bottom: -3px; margin-top: -3px;font-size:20px"> @Html.DisplayFor(model => model.Resumo) </h3>
+                            <hr class="featurette-divider">
+                            <p><a class="btn btn-lg btn-primary" @Html.ActionLink("Editar informações", "Edit", new { id = Model.ID })</a> <a class="btn btn-lg btn-primary" @Html.ActionLink("Experiencia", "index", "experiencia")</a> <a class="btn btn-lg btn-primary" @Html.ActionLink("Formação", "index", "formacao")</a> </p>
+
+                        </div>
+
+                    </div>
+
+                    <hr class="featurette-divider">
+
+    </main>
+</body>
+</html>
+
