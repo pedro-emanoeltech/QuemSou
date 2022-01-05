@@ -13,10 +13,4 @@ Editar informaçoes inseridas.
 Excluir Informaçoes inseridas.
 
 
-Imagens do Site.
-
-
-
-
-
 
